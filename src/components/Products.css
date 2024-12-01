@@ -1,0 +1,133 @@
+/* Product page background setup with white background */
+.products-page {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Ensure content starts from the top */
+    min-height: 100vh; /* Make sure the page takes at least the height of the viewport */
+    padding: 20px;
+    margin-top: 80px; /* Push content below navbar */
+    background: url('https://d2v5dzhdg4zhx3.cloudfront.net/web-assets/images/storypages/primary/ProductShowcasesampleimages/JPEG/Product+Showcase-1.jpg') no-repeat center center/cover;
+    overflow-y: auto; /* Allow scrolling if the content exceeds the page */
+    font-family: Arial, sans-serif;
+}
+
+/* Animated circular balls (bubbles) */
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    animation: float 12s infinite ease-in-out; /* 12s for a longer animation */
+    z-index: 0;
+}
+
+/* Product list container */
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    z-index: 1; /* Ensure products appear above the animated circles */
+    perspective: 1000px; /* Add perspective for 3D effect */
+    margin-bottom: 30px; /* Ensure space at the bottom */
+}
+
+/* Product card container */
+.product-card {
+    background-color: #fff;
+    padding: 20px; /* Add padding inside the card */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px; /* Set card width */
+    text-align: center;
+    transition: transform 0.6s ease, box-shadow 0.3s ease;
+    margin: 10px;
+    transform-style: preserve-3d; /* Allow 3D transformations */
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: rotateY(180deg); /* Flip the card on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    backface-visibility: hidden; /* Hide the back face during the flip */
+}
+
+.product-info {
+    margin-top: 15px;
+    backface-visibility: hidden; /* Hide the back face during the flip */
+}
+
+.product-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.product-category,
+.product-price {
+    font-size: 1rem;
+    color: #666;
+    margin: 5px 0;
+}
+
+/* Product actions container */
+.product-actions {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    backface-visibility: hidden; /* Hide back face during flip */
+}
+
+/* Action buttons styling */
+.action-button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Add to Cart button */
+.add-to-cart {
+    background-color: #f0c14b;
+    color: #111;
+}
+
+.add-to-cart:hover {
+    background-color: #e6b324;
+    transform: scale(1.05);
+}
+
+/* Buy Now button */
+.buy-now {
+    background-color: #ff9900;
+    color: #fff;
+}
+
+.buy-now:hover {
+    background-color: #e68a00;
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments for buttons */
+@media (max-width: 768px) {
+    .product-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .action-button {
+        width: 100%;
+    }
+
+    .product-card {
+        width: 100%;
+    }
+}

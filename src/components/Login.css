@@ -1,0 +1,250 @@
+/* Background and page setup */
+.login-page {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    align-items: center; /* Centers vertically */
+    justify-content: center; /* Centers horizontally */
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* Animated circular balls */
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    animation: float 12s infinite ease-in-out; /* Change to 12s for a longer animation */
+    z-index: 0;
+}
+
+/* Larger circles */
+.circle-1 {
+    width: 200px;
+    height: 200px;
+    top: 10%;
+    left: 10%;
+    background-color: rgba(255, 0, 0, 0.3); /* Red */
+    animation-delay: 0s;
+}
+
+.circle-2 {
+    width: 250px;
+    height: 250px;
+    bottom: 10%;
+    right: 15%;
+    background-color: rgba(0, 255, 0, 0.3); /* Green */
+    animation-delay: 3s;
+}
+
+.circle-3 {
+    width: 150px;
+    height: 150px;
+    top: 50%;
+    right: 20%;
+    background-color: rgba(0, 0, 255, 0.3); /* Blue */
+    animation-delay: 5s;
+}
+
+/* Smaller circles with different colors */
+.circle-4 {
+    width: 100px;
+    height: 100px;
+    top: 20%;
+    left: 70%;
+    background-color: rgba(255, 255, 0, 0.3); /* Yellow */
+    animation-delay: 7s;
+}
+
+.circle-5 {
+    width: 80px;
+    height: 80px;
+    bottom: 15%;
+    left: 30%;
+    background-color: rgba(255, 165, 0, 0.3); /* Orange */
+    animation-delay: 9s;
+}
+
+.circle-6 {
+    width: 120px;
+    height: 120px;
+    top: 60%;
+    right: 40%;
+    background-color: rgba(75, 0, 130, 0.3); /* Indigo */
+    animation-delay: 11s;
+}
+
+/* Float animation for the circles */
+@keyframes float {
+    0% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(50px, -50px);
+    }
+    50% {
+        transform: translate(-50px, 50px);
+    }
+    75% {
+        transform: translate(100px, 0);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/* Login form container */
+.login-container {
+    background: linear-gradient(135deg, rgba(255, 0, 0, 0.2), rgba(255, 127, 0, 0.2), rgba(255, 255, 0, 0.2), rgba(0, 255, 0, 0.2), rgba(0, 0, 255, 0.2), rgba(75, 0, 130, 0.2), rgba(238, 130, 238, 0.2)); /* Lighter rainbow gradient */
+    background-size: 400% 400%; /* To allow the gradient to move */
+    animation: rainbowAnimation 10s ease infinite; /* Rainbow animation */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1); /* Slightly lighter shadow */
+    text-align: center;
+    width: 350px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 80px; /* Space around the login container */
+}
+
+/* Rainbow Animation */
+@keyframes rainbowAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    25% {
+        background-position: 50% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    75% {
+        background-position: 50% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Title */
+.login-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Input fields */
+.login-input {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.login-input:focus {
+    border-color: #040507;
+    box-shadow: 0 0 5px rgba(3, 8, 28, 0.5);
+}
+
+/* Password input container */
+.password-container {
+    position: relative;
+    width: 90%;
+}
+
+/* Password input field */
+.password-input {
+    padding-right: 35px; /* Add padding for eye icon */
+}
+
+/* Eye icon inside the input field */
+.eye-icon {
+    position: absolute;
+    top: 37%;
+    left: 200px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #667eea;
+}
+
+/* Login button */
+.login-button {
+    margin: 10px auto; /* Add margin to create space around */
+    width: 50%; /* Adjust width to make it smaller than the input fields */
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Ensure it's positioned within the flow */
+}
+
+.login-button:hover {
+    background-color: #764ba2;
+    transform: scale(1.05);
+}
+
+  
+  .login-button span {
+    background-color: rgb(5, 6, 45);
+    padding: 26px 44px;
+    border-radius: 9px;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+  }
+  
+  .login-button:hover span {
+    background: none;
+  }
+  
+  .login-button:active {
+    transform: scale(0.9);
+  }
+  
+
+/* Error message */
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .login-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .login-title {
+        font-size: 1.8rem;
+    }
+
+    .circle-1,
+    .circle-2,
+    .circle-3,
+    .circle-4,
+    .circle-5,
+    .circle-6 {
+        display: none;
+    }
+}
